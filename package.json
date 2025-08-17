@@ -1,14 +1,15 @@
 {
-  "name": "local-storage-manager",
-  "version": "0.0.1",
+  "name": "@kenny-not-dead/local-storage-manager",
+  "version": "0.0.2",
   "type": "module",
   "description": "Allows you to manage local storage via console",
   "bin": {
-    "local-storage-manager": "./dist/bin/cli.js"
+    "local-storage-manager": "dist/bin/cli.js"
   },
   "scripts": {
     "build": "npx tsc",
-    "postinstall": "echo 'Package installed. Run: local-storage-manager --help'"
+    "postinstall": "echo 'Package installed. Run: local-storage-manager --help'",
+    "publish": "rm -rf dist && tsc && npm publish --access public"
   },
   "keywords": [
     "local storage"
@@ -31,5 +32,10 @@
     "@types/yargs": "^17.0.33",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
-  }
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ]
 }

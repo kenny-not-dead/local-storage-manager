@@ -38,7 +38,7 @@ async function initBrowser(): Promise<Browser> {
     headless: true,
     userDataDir: config.userDataDir,
     ignoreDefaultArgs: ["--enable-automation"],
-    args: ["--no-first-run", "--no-default-browser-check", "--disable-extensions", "--disable-sync"],
+    args: ["--no-sandbox", "--no-first-run", "--no-default-browser-check", "--disable-extensions", "--disable-sync"],
   });
 }
 
