@@ -1,0 +1,35 @@
+{
+  "name": "local-storage-manager",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Allows you to manage local storage via console",
+  "bin": {
+    "local-storage-manager": "./dist/bin/cli.js"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "postinstall": "echo 'Package installed. Run: local-storage-manager --help'"
+  },
+  "keywords": [
+    "local storage"
+  ],
+  "author": {
+    "name": "Sergeev Roman",
+    "email": "6211mail@mail.ru",
+    "url": "https://github.com/kenny-not-dead"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "chalk": "^5.5.0",
+    "ora": "^8.2.0",
+    "path": "^0.12.7",
+    "puppeteer": "^24.16.2",
+    "yargs": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/yargs": "^17.0.33",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
