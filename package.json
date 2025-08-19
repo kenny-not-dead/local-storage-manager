@@ -1,6 +1,6 @@
 {
   "name": "@kenny-not-dead/local-storage-manager",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "Allows you to manage local storage via console",
   "bin": {
@@ -12,7 +12,11 @@
     "publish": "rm -rf dist && tsc && npm publish --access public"
   },
   "keywords": [
-    "local storage"
+    "cli",
+    "local storage",
+    "local storage manager",
+    "local storage cli",
+    "local storage data"
   ],
   "author": {
     "name": "Sergeev Roman",
