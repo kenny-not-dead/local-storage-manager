@@ -1,5 +1,5 @@
 <h1 align="center">Local storage manager</h1>
-<p align="center">Allows you to manage your browser's local storage state</p>
+<p align="center">Allows you to manage your browser's local storage state from the terminal</p>
 
 # About
 
@@ -19,17 +19,26 @@ Set the configuration.
 local-storage-manager config:edit
 ```
 
-|**Name**|**description**|
-|-----------|--------------|
-|**userDataDir** | pay special attention to this setting. It indicates the location of the data for your browser. By default, I have specified an example of the setting for my browser chrome on Linux |
-| **targetURL** | URL from where we copy the data |
-| **destinationURL** | URL where we copy the data. |
-| **keys** | keys you want to copy. | 
-| **closeBrowserAfter** | close the browser when finished. *NOTE: In the current version, any actions occur in the background, without opening the browser* |
+| **Name**              | **Description**                                                                                                                                                                      |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **userDataDir**       | pay special attention to this setting. It indicates the location of the data for your browser. By default, I have specified an example of the setting for my browser chrome on Linux |
+| **targetURL**         | URL from where we copy the data                                                                                                                                                      |
+| **destinationURL**    | URL where we copy the data.                                                                                                                                                          |
+| **keys**              | keys you want to copy.                                                                                                                                                               |
+| **closeBrowserAfter** | close the browser when finished. _NOTE: In the current version, any actions occur in the background, without opening the browser_                                                    |
+
 </p>
 
-
 After setting up, you can run the command to copy the data. It is important that your browser is turned off when copying data
+
 ```bash
 local-storage-manager transfer
 ```
+
+# Commands
+
+| **Command**     | **Description**                                                                                            | **Params**                                                                                                                                                                     |
+| --------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **transfer**    | Transfers information from local storage from one URL to another. Keys and URLs are pulled from the config |                                                                                                                                                                                |
+| **config:edit** | Opens current configurations in an editor (default is vim)                                                 |                                                                                                                                                                                |
+| **get**         | Outputs all available values from local storage at the specified URL                                       | _get target_ - uses targetURL from config; <br> _get destination_ - uses destinationURL from config; <br> _get [URL]_ - uses at the specified URL (ex. get https://google.com) |

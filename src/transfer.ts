@@ -1,6 +1,7 @@
-import puppeteer, { Browser, HTTPResponse, Page } from "puppeteer";
+import { Browser, Page } from "puppeteer";
 import { config } from "./config.js";
 import ora from "ora";
+import { goToURL, initBrowser, openNewPage } from "./utils.js";
 
 export async function transfer(): Promise<void> {
   const spinner = ora("Loading...").start();
@@ -33,22 +34,7 @@ export async function transfer(): Promise<void> {
   }
 }
 
-async function initBrowser(): Promise<Browser> {
-  return puppeteer.launch({
-    headless: true,
-    userDataDir: config.userDataDir,
-    ignoreDefaultArgs: ["--enable-automation"],
-    args: ["--no-sandbox", "--no-first-run", "--no-default-browser-check", "--disable-extensions", "--disable-sync"],
-  });
-}
 
-async function openNewPage(browser: Browser): Promise<Page> {
-  return browser.newPage();
-}
-
-async function goToURL(page: Page, url: string): Promise<HTTPResponse | null> {
-  return page.goto(url, { waitUntil: "networkidle0" });
-}
 
 async function getLocalStorageData(page: Page, keys: string[]): Promise<Record<string, string | null>> {
   return page.evaluate((keys) => {
